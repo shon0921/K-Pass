@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Register</title>
+    <title>SB Admin 2 - Login</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -20,57 +20,109 @@
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
+    <style>
+        body {
+            background-color: #68f6c4 !important;
+            margin-top: 50px;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.8) !important; /* 반투명 효과 */
+            position: relative;
+            z-index: 1; /* 카드가 로고 뒤에 오도록 설정 */
+        }
+
+        .logo-container {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90px; /* 로고 크기 */
+            height: 90px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: white; /* 로고 배경 */
+            z-index: 2; /* 로고가 카드 위에 오도록 설정 */
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding-top: 60px; /* 카드 내용이 로고와 겹치지 않도록 패딩 추가 */
+        }
+    </style>
+
 </head>
 
-<body class="bg-gradient-primary">
+<body>
 
 <div class="container">
 
-    <div class="card o-hidden border-0 shadow-lg my-5">
-        <div class="card-body p-0">
-            <!-- Nested Row within Card Body -->
-            <div class="row">
-                <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
-                <div class="col-lg-7">
-                    <div class="p-5">
-                        <div class="text-center">
-                            <h1 class="h4 text-gray-900 mb-4">~~~~~~~~~</h1>
-                        </div>
-                        <form class="user">
-                            <!-- ID Field instead of First and Last Name -->
-                            <div class="form-group">
-                                <input type="text" class="form-control form-control-user" id="exampleID"
-                                       placeholder="아이디">
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                       placeholder="이메일">
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="password" class="form-control form-control-user"
-                                           id="exampleInputPassword" placeholder="비밀번호">
+    <!-- 로고를 카드 외부에 위치 -->
+    <div class="logo-container">
+        <img src="img/logo1.png" alt="Logo"> <!-- 로고 이미지 경로 설정 -->
+    </div>
+
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+
+        <div class="col-xl-10 col-lg-12 col-md-9">
+
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card-body p-0">
+                    <!-- Nested Row within Card Body -->
+                    <div class="row">
+                        <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                        <div class="col-lg-6">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <h1 class="h4 text-gray-900 mb-4">회원가입</h1>
                                 </div>
-                                <div class="col-sm-6">
-                                    <input type="password" class="form-control form-control-user"
-                                           id="exampleRepeatPassword" placeholder="비밀번호 재확인">
+                                <form class="user">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-user"
+                                               id="exampleInputID" aria-describedby="IDHelp"
+                                               placeholder="아이디">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control form-control-user" id="exampleInputEmail"
+                                               placeholder="이메일">
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-6 mb-3 mb-sm-0">
+                                            <input type="password" class="form-control form-control-user"
+                                                   id="exampleInputPassword" placeholder="비밀번호">
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input type="password" class="form-control form-control-user"
+                                                   id="exampleRepeatPassword" placeholder="비밀번호 재확인">
+                                        </div>
+                                    </div>
+                                    <a href="index.html" class="btn btn-primary btn-user btn-block">
+                                        회원가입
+                                    </a>
+                                </form>
+                                <hr>
+                                <div class="text-center">
+                                    <a class="small" href="forgot-password.html">비밀번호 찾기</a>
+                                </div>
+                                <div class="text-center">
+                                    <a class="small" href="login.html">로그인</a>
                                 </div>
                             </div>
-                            <a href="login.html" class="btn btn-primary btn-user btn-block">
-                                회원가입
-                            </a>
-                        </form>
-                        <hr>
-                        <div class="text-center">
-                            <a class="small" href="forgot-password.html">비밀번호 찾기</a>
-                        </div>
-                        <div class="text-center">
-                            <a class="small" href="login.html">로그인 이동</a>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
+
     </div>
 
 </div>
